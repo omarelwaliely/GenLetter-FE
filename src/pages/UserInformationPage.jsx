@@ -10,8 +10,7 @@ function UserInformationPage() {
     email: '',
     additional_info: '',
     file_name: '',
-
-
+    file: '',
   });
 
   async function getUserData() {
@@ -28,26 +27,32 @@ function UserInformationPage() {
   }, [])
 
   const saveButton = () => {
-    axios.post('http://localhost:8000/setuser',
-      userData)
-      .then(function (response) {
+    const formData = new FormData();
+    formData.append('name', userData.name);
+    formData.append('email', userData.email);
+    formData.append('additional_info', userData.additional_info);
+    formData.append('file_name', userData.file_name);
+    formData.append('file', userData.file);
+
+    axios.post('http://localhost:8000/setuser', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
+      .then(response => {
         console.log(response);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch(error => {
+        console.error(error);
       });
-
-  }
+  };
 
   const handleFieldChange = (e) => {
     const { name, value, type, files } = e.target;
 
     if (name == 'file_name') {
-      console.log(files[0])
-      console.log('here')
       setUserData(prev => ({
         ...prev,
-        [name]: files[0]?.name || ''
+        file_name: files[0]?.name || '',
+        file: files[0]
       }));
     } else {
       setUserData(prev => ({
