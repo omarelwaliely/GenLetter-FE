@@ -32,8 +32,9 @@ function UserInformationPage() {
     formData.append('email', userData.email);
     formData.append('additional_info', userData.additional_info);
     formData.append('file_name', userData.file_name);
-    formData.append('file', userData.file);
-
+    if (userData.file instanceof File) {
+      formData.append('file', userData.file);
+    }
     axios.post('http://localhost:8000/setuser', formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
