@@ -6,7 +6,6 @@ function Navbar() {
     <div id='Nav'>
       <Link to="/">Profile</Link>
       <Link to="/description">Job Description</Link>
-      <Link to="/letter">Generated Letter</Link>
 
     </div >
   );

@@ -1,6 +1,8 @@
 import '../App.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 function UserInformationPage() {
@@ -20,6 +22,7 @@ function UserInformationPage() {
       })
       .catch((error) => {
         console.error("Failed to fetch user data:", error);
+        //toast.error("No User Data Found")
       });
   }
   useEffect(() => {
@@ -40,9 +43,13 @@ function UserInformationPage() {
     })
       .then(response => {
         console.log(response);
+        toast.success("Saved User Sucessfully");
+
       })
       .catch(error => {
         console.error(error);
+        toast.error("Failed To Save User");
+
       });
   };
 
@@ -89,7 +96,6 @@ function UserInformationPage() {
       </div>
 
       <button style={{ marginTop: 20, height: 100, width: 200, borderRadius: 100 }} onClick={saveButton} > Save </button>
-
     </div >
   );
 }

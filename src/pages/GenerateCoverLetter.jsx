@@ -1,6 +1,9 @@
 import '../App.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 
 function GenerateCoverLetterPage() {
 
@@ -15,23 +18,30 @@ function GenerateCoverLetterPage() {
       .then((response) => {
         setPostingData(response.data);
         console.log(response.data)
+        toast.success()
       })
       .catch((error) => {
         console.error("Failed to fetch posting data:", error);
+        //toast.error("No Posting Added Yet!")
+
       });
   }
   useEffect(() => {
     getPostingData()
   }, [])
-
+  const navigate = useNavigate();
   const submitButton = () => {
     axios.post('http://localhost:8000/setposting',
       postingData)
       .then(function (response) {
         console.log(response);
+        toast.success("Posting Added");
+        navigate("/letter");
       })
       .catch(function (error) {
         console.log(error);
+        toast.error("Failed To Add Job Posting");
+
       });
 
   }
