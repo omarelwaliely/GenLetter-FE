@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { FaBriefcase } from "react-icons/fa";
+
 
 
 function GenerateCoverLetterPage() {
@@ -56,23 +58,33 @@ function GenerateCoverLetterPage() {
 
 
   return (
-    <div className='flex'>
-      <div className='info-item'>
-        <h3>Job Posting</h3>
-        <textarea style={{ height: 300 }} onChange={handleFieldChange} name='posting' value={postingData.posting} />   </div>
+    <div className='full-info-screen'>
+      <div className='info-holder'>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+          <FaBriefcase size={30} color='grey' />
+          <h2 style={{ marginLeft: 10 }}>Job Information</h2>
+        </div>
+        <div className='info-item'>
+          <p>Input the information for the job.</p>
+        </div>
+        <div className='info-item'>
+          <h3>Job Posting</h3>
+          <textarea style={{ height: 200 }} onChange={handleFieldChange} name='posting' value={postingData.posting} />   </div>
 
-      <div className='info-item'>
-        <h3>Website Link</h3>
-        <input onChange={handleFieldChange} name='website_link' value={postingData.website_link} />
+        <div className='info-item'>
+          <h3>Website Link</h3>
+          <input onChange={handleFieldChange} name='website_link' value={postingData.website_link} />
+        </div>
+
+        <div className='info-item' >
+          <h3>Additional Information</h3>
+          <textarea style={{ height: 200 }} onChange={handleFieldChange} name='additional_info' value={postingData.additional_info} />
+
+        </div>
+        <div className='button-container'>
+          <button style={{ margin: 20, height: 50, width: 100, borderRadius: 100 }} onClick={submitButton} > Submit </button>
+        </div>
       </div>
-
-      <div className='info-item' >
-        <h3>Additional Information</h3>
-        <textarea style={{ height: 300 }} onChange={handleFieldChange} name='additional_info' value={postingData.additional_info} />
-
-      </div>
-
-      <button style={{ marginTop: 20, height: 100, width: 200, borderRadius: 100 }} onClick={submitButton} > Submit </button>
     </div>
   );
 }

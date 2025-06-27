@@ -2,6 +2,8 @@ import '../App.css'
 import useWebSocket from 'react-use-websocket';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { ReadyState } from 'react-use-websocket';
+import { SlEnvolopeLetter } from "react-icons/sl";
+
 function EditLetterPage() {
   const [currGeneratedLetter, setcurrGeneratedLetter] = useState("")
   const getSocketUrl = useCallback(() => { //establishes connection
@@ -37,10 +39,19 @@ function EditLetterPage() {
 
   }, [lastMessage]);
   return (
-    <div className='info-item'>
-      <h3>Generated Letter</h3>
-      <textarea style={{ height: 800, width: 800 }} value={currGeneratedLetter} onChange={handleLetterChange} />
-
+    <div className='full-info-screen'>
+      <div className='info-holder'>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+          <SlEnvolopeLetter size={30} color='grey' />
+          <h2 style={{ marginLeft: 10 }}>Generated Letter</h2>
+        </div>
+        <div className='info-item'>
+          <p>View and update letter. Note that at it may still be generating.</p>
+        </div>
+        <div className='info-item'>
+          <textarea style={{ height: 650, marginBottom: 10 }} value={currGeneratedLetter} onChange={handleLetterChange} />
+        </div>
+      </div>
     </div >
   );
 }

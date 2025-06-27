@@ -1,7 +1,8 @@
 import '../App.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import { FaUser } from "react-icons/fa";
 
 
 
@@ -72,31 +73,41 @@ function UserInformationPage() {
 
 
   return (
-    <div className='flex'>
-      <div className='info-item'>
-        <h3>Name</h3>
-        <input value={userData.name} name="name" onChange={handleFieldChange} />
-      </div>
+    <div className='full-info-screen'>
+      <div className='info-holder'>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+          <FaUser size={30} color='grey' />
+          <h2 style={{ marginLeft: 10 }}>Profile Information</h2>
+        </div>
+        <div className='info-item'>
+          <p>View or update your profile.</p>
+        </div>
+        <div className='info-item'>
+          <h3>Name</h3>
+          <input value={userData.name} name="name" onChange={handleFieldChange} />
+        </div>
 
-      <div className='info-item'>
-        <h3>Email</h3>
-        <input value={userData.email} name="email" onChange={handleFieldChange} />
-      </div>
+        <div className='info-item'>
+          <h3>Email</h3>
+          <input value={userData.email} name="email" onChange={handleFieldChange} />
+        </div>
 
-      <div className='info-item'>
-        <h3>Additional Information</h3>
-        <textarea style={{ height: 400 }} value={userData.additional_info} name="additional_info" onChange={handleFieldChange} />
+        <div className='info-item'>
+          <h3>Additional Information</h3>
+          <textarea style={{ height: 200 }} value={userData.additional_info} name="additional_info" onChange={handleFieldChange} />
 
-      </div>
-      <div className='info-item'>
-        <h3>Detailed Resume</h3>
-        <p>{userData.file_name ? "Current File: " + userData.file_name : ""} </p>
+        </div>
+        <div className='info-item'>
+          <h3>Detailed Resume</h3>
+          <p>{userData.file_name ? "Current File: " + userData.file_name : ""} </p>
 
-        <input type="file" name='file_name' onChange={handleFieldChange} />
-      </div>
-
-      <button style={{ marginTop: 20, height: 100, width: 200, borderRadius: 100 }} onClick={saveButton} > Save </button>
-    </div >
+          <input type="file" name='file_name' onChange={handleFieldChange} />
+        </div>
+        <div className='button-container'>
+          <button style={{ margin: 20, height: 50, width: 100, borderRadius: 100 }} onClick={saveButton} > Save </button>
+        </div>
+      </div >
+    </div>
   );
 }
 
