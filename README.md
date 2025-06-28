@@ -61,7 +61,7 @@ http://localhost:8000
 
 ![Profile Screenshot](./public/pr_screenshot.png)
 ![Posting Screenshot](./public/po_screenshot.png)
-![Letter Screenshot](./public/le_screenshot.png)
+![Letter Screenshot](./public/letter_screenshot.png)
 
 
 ## 🤝 Contributing
