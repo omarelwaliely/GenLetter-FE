@@ -49,7 +49,7 @@ function EditLetterPage() {
           <p>View and update letter. Note that it may still be generating.</p>
         </div>
         <div className='info-item'>
-          <textarea style={{ height: 1200, marginBottom: 10 }} value={currGeneratedLetter} onChange={handleLetterChange} />
+          <textarea style={{ height: 650, marginBottom: 10 }} value={currGeneratedLetter} onChange={handleLetterChange} />
         </div>
       </div>
     </div >

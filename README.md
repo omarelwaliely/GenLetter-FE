@@ -57,6 +57,13 @@ http://localhost:8000
 
 ---
 
+## 🖼️ Preview
+
+![Profile Screenshot](./public/pr_screenshot.png)
+![Posting Screenshot](./public/po_screenshot.png)
+![Letter Screenshot](./public/le_screenshot.png)
+
+
 ## 🤝 Contributing
 
 Pull requests and contributions are welcome.
