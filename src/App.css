@@ -17,7 +17,7 @@ body {
   margin: 10px;
   padding: 0;
   line-height: 1.6;
-  font-size:16px;
+  font-size:30px;
 }
 
 a {
@@ -37,7 +37,7 @@ select {
   border: 1px solid var(--input-border);
   padding: 8px;
   border-radius: 4px;
-  font-size:16px;
+  font-size:40px;
 }
 
 button:hover {
@@ -48,8 +48,8 @@ button:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: #e1d9ff;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-right: 10px;
 }
 
@@ -91,7 +91,7 @@ width:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:20px;
+  margin-top:100px;
   width: 100bh;
 }
 
@@ -120,19 +120,22 @@ width:100vh;
 }
 
 .nav-logo {
-  height: 36px;
+  height: 100px;
   width: auto;
 }
 
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 32px;
+  gap: 20px;
 }
 
 .nav-links a {
   color: var(--text-color);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 40px;
   padding: 4px 6px;
   border-radius: 6px;
   transition: background-color 0.2s ease;
@@ -153,6 +156,6 @@ button{
   background-color:rgb(20, 191, 91); 
   color: #ffffff;
   border: 1px solid var(--input-border);
-  font-size: 20px;
+  font-size: 30px;
   padding:4px;
 }

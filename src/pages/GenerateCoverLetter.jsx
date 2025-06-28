@@ -69,7 +69,7 @@ function GenerateCoverLetterPage() {
         </div>
         <div className='info-item'>
           <h3>Job Posting</h3>
-          <textarea style={{ height: 200 }} onChange={handleFieldChange} name='posting' value={postingData.posting} />   </div>
+          <textarea style={{ height: 400 }} onChange={handleFieldChange} name='posting' value={postingData.posting} />   </div>
 
         <div className='info-item'>
           <h3>Website Link</h3>
@@ -78,11 +78,11 @@ function GenerateCoverLetterPage() {
 
         <div className='info-item' >
           <h3>Additional Information</h3>
-          <textarea style={{ height: 200 }} onChange={handleFieldChange} name='additional_info' value={postingData.additional_info} />
+          <textarea style={{ height: 400 }} onChange={handleFieldChange} name='additional_info' value={postingData.additional_info} />
 
         </div>
         <div className='button-container'>
-          <button style={{ margin: 20, height: 50, width: 100, borderRadius: 100 }} onClick={submitButton} > Submit </button>
+          <button style={{ margin: 20, height: 100, width: 200, borderRadius: 100 }} onClick={submitButton} > Submit </button>
         </div>
       </div>
     </div>

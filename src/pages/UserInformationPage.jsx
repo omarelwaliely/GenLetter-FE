@@ -104,7 +104,7 @@ function UserInformationPage() {
           <input type="file" name='file_name' onChange={handleFieldChange} />
         </div>
         <div className='button-container'>
-          <button style={{ margin: 20, height: 50, width: 100, borderRadius: 100 }} onClick={saveButton} > Save </button>
+          <button style={{ margin: 20, height: 100, width: 200, borderRadius: 100 }} onClick={saveButton} > Save </button>
         </div>
       </div >
     </div>
